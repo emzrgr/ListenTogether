@@ -10,6 +10,8 @@
 
 Music.destroy_all
 
+
+
 Music.create!([
   {
     title: "Happy Song",
