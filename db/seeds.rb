@@ -7,3 +7,16 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts 'création de moods'
+
+Mood.create!([
+  { name: "Happy", emoji: "😀" },
+  { name: "Sad", emoji: "😢" },
+  { name: "Angry", emoji: "😡" },
+  { name: "Surprised", emoji: "😱" },
+  { name: "In Love", emoji: "😍" },
+  { name: "Sleepy", emoji: "😴" }
+])
+
+puts "#{Mood.all.count} créés"
