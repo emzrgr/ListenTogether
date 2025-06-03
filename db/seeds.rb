@@ -8,15 +8,35 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-puts 'création de moods'
+Music.destroy_all
 
-Mood.create!([
-  { name: "Happy", emoji: "😀" },
-  { name: "Sad", emoji: "😢" },
-  { name: "Angry", emoji: "😡" },
-  { name: "Surprised", emoji: "😱" },
-  { name: "In Love", emoji: "😍" },
-  { name: "Sleepy", emoji: "😴" }
+
+
+Music.create!([
+  {
+    title: "Happy Song",
+    album: "Feel Good",
+    artist: "Joyful Band",
+    lyrics: "Singing in the sunshine...",
+    cover_url: "https://f4.bcbits.com/img/a2218107711_16.jpg",
+    mood_id: 1
+  },
+  {
+    title: "Blue Moon",
+    album: "Melancholy Nights",
+    artist: "Sad Singer",
+    lyrics: "Under the blue moon, I wander...",
+    cover_url: "https://f4.bcbits.com/img/a2218107711_16.jpg",
+    mood_id: 2
+  },
+  {
+    title: "Rage Anthem",
+    album: "Fire Inside",
+    artist: "Angry Voices",
+    lyrics: "Let it all out, scream and shout...",
+    cover_url: "https://f4.bcbits.com/img/a2218107711_16.jpg",
+    mood_id: 3
+  }
 ])
 
-puts "#{Mood.all.count} créés"
+puts "Musics créées !  "
