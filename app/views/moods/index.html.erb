@@ -3,4 +3,5 @@
 <h2>What's your mood?</h2>
 
 <% @moods.each do |mood| %>
-<%=  link_to new_music_path(mood_id: mood.id) do %>
+<%=  link_to mood.emoji, new_mood_music_path(mood.id) %>
+<%end %>
