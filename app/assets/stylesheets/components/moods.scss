@@ -1,0 +1,47 @@
+.mood-toggle-button {
+  background-color: #3C1A5B;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.mood-dropdown {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+.mood-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.mood-item:last-child {
+  border-bottom: none;
+}
+
+.emoji {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.mood-dropdown, .mood-toggle-button, h1, h2 {
+  font-family: 'Josefin Sans', sans-serif;
+}
