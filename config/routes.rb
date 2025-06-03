@@ -10,3 +10,4 @@ Rails.application.routes.draw do
   resources :user_moods, only: [:create, :destroy]
   resources :musics, only: [:show, :create]
 end
+
