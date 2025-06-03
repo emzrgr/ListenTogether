@@ -1,6 +1,7 @@
-.navbar-lewagon {
+.navbar-user {
   justify-content: space-between;
-  background: white;
+  background: $purple;
+  font-style: $light-gray;
 }
 
 .navbar-lewagon .navbar-collapse {

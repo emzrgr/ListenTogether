@@ -1,6 +1,26 @@
-<div class="container">
-  <h1><%=  @music.title %></h1><p> user : <%= current_user.email %></p>
-  <p> Artist : <%= @music.artist %></p>
-  <p> Album : <%= @music.album %></p>
-  <%= image_tag @music.cover_url, alt: @music.title %>
+<div class="container mt-3">
+  <div class="navbar-user p-3">
+  <h2>Ceci est une navbar</h2>
+  <%# <p> user : <%= current_user.email %>
+  </div>
+  <div class="body">
+    <div class="music-info-card mt-3 text-align-center">
+      <h1 class="text-center "><%=  @music.title %></h1>
+        <div class="text-info d-flex justify-content-center ">
+          <div class="artist-column">
+            <p> Artist:</p>
+            <p><%= @music.artist %></p>
+          </div>
+          <div class="album-column">
+            <p> Album:</p>
+            <p><%= @music.album %></p>
+          </div>
+        </div>
+      <%= image_tag @music.cover_url, alt: @music.title %>
+    </div>
+    <div class="LLM-buttons mt-3">
+      <h3>Want more info? <br>
+          Ask LT:</h3>
+    </div>
+  </div>
 </div>

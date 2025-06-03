@@ -10,6 +10,15 @@
 
 Music.destroy_all
 
+Mood.create!([
+  { name: "Happy", emoji: "😀" },
+  { name: "Sad", emoji: "😢" },
+  { name: "Angry", emoji: "😠" },
+  { name: "Surprised", emoji: "😲" },
+  { name: "Love", emoji: "😍" },
+  { name: "Cool", emoji: "😎" }
+])
+
 Music.create!([
   {
     title: "Happy Song",
