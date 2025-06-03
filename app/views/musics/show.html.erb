@@ -1,0 +1,6 @@
+<div class="container">
+  <h1><%=  @music.title %></h1><p> user : <%= current_user.email %></p>
+  <p> Artist : <%= @music.artist %></p>
+  <p> Album : <%= @music.album %></p>
+  <%= image_tag @music.cover_url, alt: @music.title %>
+</div>
