@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     resources :musics, only: [:new, :create]
   end
   resources :user_moods, only: [:create, :destroy]
-  resources :musics, only: [:show, :create]
+  resources :musics, only: [:show, :create] do
+    member do
+      post :generate_lyrics
+    end   
+  end
 end
