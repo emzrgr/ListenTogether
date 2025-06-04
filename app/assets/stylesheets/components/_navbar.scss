@@ -1,13 +1,32 @@
 .navbar-user {
-  justify-content: space-between;
-  background: $purple;
-  font-style: $light-gray;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  margin-bottom: 33px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.app-name {
+  margin: 5px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.app-name h2{
+  font-size: 14px;
+  text-shadow: 1px 1px #ffffffd4;
+  margin-bottom: 0px;
+}
+
+.app-name i{
+  color: $purple;
+  font-size: 9px;
+  text-shadow: 1px 1px #ffffffd4
+}
+
+.user-icon button {
+  margin: 5px;
+  padding: 4px 8px 1px 8px;
+  font-size: 12px;
+  text-align: center;
+  text-shadow: 1px 1px #14131469;
+  color: #e3dfdf;
+  background-color: #5d3a7d;
+  border: 0.5px solid #3C1A5B;
+  border-radius: 50%;
 }
