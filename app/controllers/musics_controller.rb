@@ -9,6 +9,7 @@ class MusicsController < ApplicationController
   def new
     @music = Music.new
     @message = Message.new
+    @messages = Message.all
   end
 
   def create

@@ -1,8 +1,11 @@
 <div class="container">
 
   <h1> Ask for new music for</h1>
-  <p><%= @mood.name %></p>
-  <p><%= @mood.emoji %></p>
+  <p><%= @mood.emoji %><%= @mood.name %></p>
+</div>
+
+<div class="container">
+  <%= render "ia_last_message", messages: @messages, mood: @mood %>
 </div>
 
 <div class="container">
