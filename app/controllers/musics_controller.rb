@@ -9,7 +9,7 @@ class MusicsController < ApplicationController
   def new
     @music = Music.new
     @message = Message.new
-    @messages = Message.all
+    @messages = Message.where(mood_id: @mood.id, role: "assistant" )
   end
 
   def create

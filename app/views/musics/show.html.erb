@@ -17,7 +17,9 @@
         </div>
         </div>
         <div class="photo-card">
-          <%= image_tag @music.cover_url, alt: @music.title %>
+          <% unless @music.cover_url == nil %>
+            <%= image_tag @music.cover_url, alt: @music.title %>
+          <% end %>
         </div>
     </div>
     <div class="llm-card">
