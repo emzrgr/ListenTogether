@@ -4,3 +4,9 @@
   <p><%= @mood.name %></p>
   <p><%= @mood.emoji %></p>
 </div>
+
+<div class="container">
+  <%= simple_form_for [@mood, @message] do |f| %>
+    <%= f.button :submit, 'Look for a music', class: 'btn btn-primary' %>
+  <% end %>
+</div>

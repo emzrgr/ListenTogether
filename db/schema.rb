@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_06_04_100425) do
+ActiveRecord::Schema[7.1].define(version: 2025_06_04_103004) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "messages", force: :cascade do |t|
     t.string "role"
     t.text "content"
-    t.bigint "moods_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["moods_id"], name: "index_messages_on_moods_id"
+    t.bigint "mood_id", null: false
+    t.index ["mood_id"], name: "index_messages_on_mood_id"
   end
 
   create_table "moods", force: :cascade do |t|
@@ -63,7 +63,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_04_100425) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "messages", "moods", column: "moods_id"
+  add_foreign_key "messages", "moods"
   add_foreign_key "musics", "moods"
   add_foreign_key "user_moods", "moods"
   add_foreign_key "user_moods", "users"

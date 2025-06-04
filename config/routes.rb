@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :moods, only: [:index, :show] do
     resources :musics, only: [:new, :create]
+    resources :messages, only: [:new, :create]
   end
   resources :user_moods, only: [:create, :destroy]
   resources :musics, only: [:show, :create]

@@ -1,3 +1,3 @@
 class Message < ApplicationRecord
-  belongs_to :moods
+  belongs_to :mood
 end
