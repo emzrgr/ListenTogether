@@ -1,11 +1,11 @@
 class MusicsController < ApplicationController
-
   def show
     @music = Music.find(params[:id])
   end
 
   def new
     @music = Music.new
+    @mood = Mood.find(params[:mood_id])
   end
 
   def create
