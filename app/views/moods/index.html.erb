@@ -1,7 +1,17 @@
 <h1>My moods</h1>
 
-<h2>What's your mood?</h2>
+<div data-controller="mood-dropdown" class="mood-dropdown-container">
+  <button data-action="click->mood-dropdown#toggle" class="mood-toggle-button">
+    What's your mood?
+  </button>
 
-<% @moods.each do |mood| %>
-<%=  link_to mood.emoji, new_mood_music_path(mood.id) %>
-<%end %>
+  <div data-mood-dropdown-target="dropdown" class="mood-dropdown hidden">
+    <h2>Select a Mood</h2>
+    <% @moods.each do |mood| %>
+      <%= link_to new_mood_music_path(mood), class: "mood-item" do %>
+        <span class="emoji"><%= mood.emoji %></span>
+        <span class="mood-name"><%= mood.name %></span>
+      <% end %>
+    <% end %>
+  </div>
+</div>
