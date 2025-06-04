@@ -1,0 +1,78 @@
+.devise-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background-color: white;
+  border-radius: 10px;
+  font-family: $headers-font;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.devise-container h1 {
+  margin-top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.devise-container h2 {
+  margin-top: 15px;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-inputs {
+  text-align: left;
+}
+
+.form-actions {
+  margin-top: 20px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  border: 1px solid #333;
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border: 2px solid #3C1A5B;
+  box-shadow: 0 0 0 2px rgba(60, 26, 91, 0.2);
+}
+
+input[type="submit"],
+button {
+  background-color: #3C1A5B;
+  color: white;
+  font-weight: bold;
+  padding: 12px 0;
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: white;
+  color: #3C1A5B;
+  border: 2px solid #3C1A5B;
+}
+
+a {
+  margin-top: 10px;
+  color: #3C1A5B;
+  font-weight: 500;
+  text-decoration: none;
+}
