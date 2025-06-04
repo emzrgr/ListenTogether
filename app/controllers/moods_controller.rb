@@ -4,9 +4,8 @@ class MoodsController < ApplicationController
   def index
     @moods = Mood.all
   end
-
   def show
     @mood = Mood.find(params[:id])
-    @musics = @mood.musics
+    @user_moods = UserMood.where(user_id: current_user.id, mood_id: @mood.id)
   end
 end

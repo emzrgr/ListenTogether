@@ -38,9 +38,9 @@ class MessagesController < ApplicationController
       @chat = RubyLLM.chat
       response = @chat.with_instructions(system_prompt).ask(@message.content)
       Message.create(role: "assistant", content: response.content, mood_id: @mood.id)
-      redirect_to new_mood_music_path(@mood)
+      redirect_to new_mood_user_mood_path(@mood)
     else
-       redirect_to new_mood_music_path(@mood)
+       redirect_to new_mood_user_mood_path(@mood)
     end
   end
 end
