@@ -13,10 +13,14 @@ class MusicsController < ApplicationController
   end
 
   def create
-    # chopper mood.name et l'envoyer au llm avec le prompt
-    # recup le message du llm et trier en titre album etc
-    # faire un music.new avec le message du llm en argument
-    @music = Music.new(mood_params)
+    json_message = Message.last.content
+    message_hash = JSON.parse(json_message)
+    @music = Music.new(artist: message_hash["artist"], title: message_hash["title"], album: message_hash["album"], mood_id: @mood.id )
+      if @music.save
+        redirect_to new_mood_music_path(@mood)
+      else
+        render :new, status: :unprocessable_entity
+      end
   end
 
   private
@@ -24,5 +28,4 @@ class MusicsController < ApplicationController
   def set_mood
     @mood = Mood.find(params[:mood_id])
   end
-
 end
