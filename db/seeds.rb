@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 Mood.destroy_all
+Music.destroy_all
 
 Mood.create!([
   { name: "Happy", emoji: "😀" },
@@ -17,11 +18,6 @@ Mood.create!([
   { name: "Love", emoji: "😍" },
   { name: "Cool", emoji: "😎" }
 ])
-
-
-Music.destroy_all
-
-
 
 Music.create!([
   {
