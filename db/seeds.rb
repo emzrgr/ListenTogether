@@ -7,10 +7,17 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+Mood.destroy_all
 Music.destroy_all
 
-
+Mood.create!([
+  { name: "Happy", emoji: "😀" },
+  { name: "Sad", emoji: "😢" },
+  { name: "Angry", emoji: "😠" },
+  { name: "Surprised", emoji: "😲" },
+  { name: "Love", emoji: "😍" },
+  { name: "Cool", emoji: "😎" }
+])
 
 Music.create!([
   {
