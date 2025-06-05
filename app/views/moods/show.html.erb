@@ -2,22 +2,23 @@
   <h1><%= @mood.emoji %> <%= @mood.name.capitalize %></h1>
 </div>
 
-<% if @mood.musics.any? %>
-  <% @mood.musics.each do |music| %>
-    <div class="music-info-card d-flex justify-content-between align-items-end mt-3 p-2">
-      <div class="text-info">
-        <h3 class="mb-1">"<%= music.title %>"</h3>
-        <div class="artist-column">
-          <p class="label">Artist:</p>
-          <p><%= music.artist %></p>
-        </div>
-        <div class="album-column">
-          <p class="label">Album:</p>
-          <p><%= music.album %></p>
-        </div>
+<% if @mood.user_moods.any? %>
+  <% @user_mood_musics.each do |user_mood_music| %>
+   <%= link_to  music_path(user_mood_music.music_id), class: "text-decoration-none" do %>
+      <div class="music-info-card d-flex justify-content-between align-items-end mt-3 p-2">
+          <div class="text-info">
+            <h3 class="mb-1">"<%= user_mood_music.music.title %>"</h3>
+            <div class="artist-column">
+              <p class="label">Artist:</p>
+              <p><%= user_mood_music.music.artist %></p>
+            </div>
+            <div class="album-column">
+              <p class="label">Album:</p>
+              <p><%= user_mood_music.music.album %></p>
+            </div>
+          </div>
       </div>
-     
-    </div>
+      <% end %>
   <% end %>
 <% else %>
   <p class="text-center">No musics yet.</p>
@@ -25,6 +26,5 @@
 
 
 <div class="d-flex justify-content-center mt-3">
-  <%= link_to "Select a mood", new_mood_music_path(@mood), class: "generate-music-button btn btn-success" %>
+  <%= link_to "Select  new mood", root_path, class: "generate-music-button btn btn-success" %>
 </div>
-

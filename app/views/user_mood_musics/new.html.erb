@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h1> Ask for new music</h1>
+  <p><%= @mood.emoji %><%= @mood.name %></p>
+</div>
+
+<div class="container">
+  <%= render "ia_last_message", message: @last_message, mood: @mood %>
+</div>
+
+<div class="container">
+  <%= simple_form_for [@mood, @message] do |f| %>
+    <%= f.button :submit, 'Look for a music', class: 'btn btn-primary' %>
+  <% end %>
+
+  <%= button_to "Like ? Add this song to your musics", mood_user_mood_musics_path(@mood)%>
+  <%= link_to "Enough ? Go to the mood to see musics", mood_path(@mood)  %>
+</div>
