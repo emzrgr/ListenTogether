@@ -8,18 +8,17 @@
     <div class="ai-response-card d-flex flex-column align-items-start">
       <p class="mb-2">Here's a song you might like:</p>
       <div class="ai-proposition-card">
-        <%= render "ia_last_message", messages: @messages, mood: @mood %>
+        <%= render "ia_last_message", message: @last_message, mood: @mood %>
       </div>
     </div>
   </div>
   <div class="container">
     <div class="buttons d-flex justify-content-between flex-wrap align-items-center">
-      <%= button_to "Add to moodlist ❤️", mood_user_moods_path(@mood), class: 'add-button' %>
+      <%= button_to "Add to moodlist ❤️", mood_user_mood_musics_path(@mood), class: 'add-button' %>
       <%= simple_form_for [@mood, @message] do |f| %>
         <%= f.button :submit, 'Find the perfect song✨', class: "ai-button" %>
       <% end %>
       <%= link_to "Done? Check your moodlist", mood_path(@mood)  %>
     </div>
-
   </div>
 </div>

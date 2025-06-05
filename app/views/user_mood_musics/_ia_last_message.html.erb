@@ -1,5 +1,5 @@
-  <% if  messages.present? && mood.id == messages.last.mood_id %>
-      <% json_message = messages.last.content %>
+  <% if  mood.id == message.mood_id %>
+      <% json_message = message.content %>
       <% message_hash = JSON.parse(json_message) %>
       <p> "<%= message_hash["title"] %>"</p>
       <p>by <%= message_hash["artist"] %>, album: <%= message_hash["album"] %></p>

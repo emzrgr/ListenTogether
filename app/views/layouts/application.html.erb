@@ -11,9 +11,10 @@
   </head>
 
   <body>
+  <%= render "shared/flash" %>
     <% unless devise_controller? && (controller_name == "sessions" || controller_name == "registrations") && action_name == 'new' %>
-      <%= render "shared/navbar" %>
-    <% end %>
+        <%= render "shared/navbar" %>
+      <% end %>
     <%= yield %>
   </body>
 </html>
