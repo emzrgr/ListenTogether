@@ -6,7 +6,6 @@ class CreateMusics < ActiveRecord::Migration[7.1]
       t.string :artist
       t.text :lyrics
       t.string :cover_url
-      t.references :mood, null: false, foreign_key: true
 
       t.timestamps
     end

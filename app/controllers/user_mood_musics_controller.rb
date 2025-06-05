@@ -9,7 +9,9 @@ class UserMoodMusicsController < ApplicationController
   def new
     @user_mood_music = UserMoodMusic.new
     @message = Message.new
-    @hide_button = !!Music.find_by(title: JSON.parse(@last_message.content)["title"])
+    if @last_message.exist?
+      @hide_button = !!Music.find_by(title: JSON.parse(@last_message.content)["title"])
+    end
   end
 
   def create
