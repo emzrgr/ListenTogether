@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_06_04_182253) do
+ActiveRecord::Schema[7.1].define(version: 2025_06_04_103004) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,8 +36,10 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_04_182253) do
     t.string "artist"
     t.text "lyrics"
     t.string "cover_url"
+    t.bigint "mood_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["mood_id"], name: "index_musics_on_mood_id"
   end
 
   create_table "user_moods", force: :cascade do |t|
@@ -45,9 +47,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_04_182253) do
     t.bigint "mood_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "music_id", null: false
     t.index ["mood_id"], name: "index_user_moods_on_mood_id"
-    t.index ["music_id"], name: "index_user_moods_on_music_id"
     t.index ["user_id"], name: "index_user_moods_on_user_id"
   end
 
@@ -64,7 +64,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_04_182253) do
   end
 
   add_foreign_key "messages", "moods"
+  add_foreign_key "musics", "moods"
   add_foreign_key "user_moods", "moods"
-  add_foreign_key "user_moods", "musics"
   add_foreign_key "user_moods", "users"
 end
