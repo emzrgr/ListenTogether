@@ -3,21 +3,21 @@
 </div>
 
 <div class="music-list-wrapper d-flex flex-column align-items-center">
-  <% if @mood.musics.any? %>
-    <% @user_moods.each do |user_mood| %>
-      <% if user_mood.mood_id == @mood.id && user_mood.user_id == current_user.id %>
+  <% if @mood.user_moods.any? %>
+    <% @user_mood_musics.each do |user_mood_music| %>
+     <%= link_to  music_path(user_mood_music.music_id), class: "text-decoration-none" do %>
         <div class="music-info-card p-3 mb-4">
-          <div class="music-text">
-            <h3 class="mb-2">"<%= user_mood.music.title %>"</h3>
-            <p><strong>Artist:</strong> <%= user_mood.music.artist %></p>
-            <p><strong>Album:</strong> <%= user_mood.music.album %></p>
-          </div>
+            <div class="music-text">
+              <h3 class="mb-2">"<%= user_mood_music.music.title %>"</h3> 
+              <p><strong>Artist:</strong> <%= user_mood_music.music.artist %></p>
+              <p><strong>Album:</strong> <%= user_mood_music.music.album %></p>
+            </div>
         </div>
       <% end %>
     <% end %>
-  <% else %>
+   <% else %>
     <p class="text-center">No musics yet.</p>
-  <% end %>
+   <% end %>
 </div>
 
 

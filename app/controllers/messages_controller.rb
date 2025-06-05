@@ -34,13 +34,13 @@ class MessagesController < ApplicationController
   def create
     @mood = Mood.find(params[:mood_id])
     @message = Message.new(role: "user", content: @mood.name, mood_id: @mood.id)
-    if @message.save
+    if @message.valid?
       @chat = RubyLLM.chat
       response = @chat.with_instructions(system_prompt).ask(@message.content)
       Message.create(role: "assistant", content: response.content, mood_id: @mood.id)
-      redirect_to new_mood_user_mood_path(@mood)
+      redirect_to  new_mood_user_mood_music_path(@mood)
     else
-       redirect_to new_mood_user_mood_path(@mood)
+       redirect_to  new_mood_user_mood_music_path(@mood)
     end
   end
 end
