@@ -1,0 +1,7 @@
+  <% if  mood.id == message&.mood_id %>
+      <% json_message = message.content %>
+      <% message_hash = JSON.parse(json_message) %>
+      <p> "<%= message_hash["title"] %>"</p>
+      <p>by <%= message_hash["artist"] %>, album: <%= message_hash["album"] %></p>
+      <img src="<%= message_hash["cover"] %>" alt="Cover de <%= message_hash["album"] %>">
+  <% end %>

@@ -3,7 +3,7 @@ class CreateMessages < ActiveRecord::Migration[7.1]
     create_table :messages do |t|
       t.string :role
       t.text :content
-      t.references :moods, null: false, foreign_key: true
+      t.references :mood, null: false, foreign_key: true
 
       t.timestamps
     end

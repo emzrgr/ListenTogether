@@ -5,16 +5,11 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :moods, only: [:index, :show] do
-    resources :user_moods, only: [:new, :create]
+    resources :user_mood_musics, only: [:index, :new, :create, :destroy]
     resources :messages, only: [:new, :create]
   end
 
-  resources :musics, only: [:create]
-  resources :user_moods, only: [:destroy]
+  resources :user_moods, only: [:index, :show]
+  resources :musics, only: :show
 
-  resources :musics, only: [:show, :create] do
-    member do
-      post :generate_lyrics
-    end
-  end
 end

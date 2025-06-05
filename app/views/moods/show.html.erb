@@ -1,30 +1,26 @@
-<div class="mood-header mb-4">
+<div class="mood-header mb-4 text-center">
   <h1><%= @mood.emoji %> Your <%= @mood.name.capitalize %> mood </h1>
 </div>
 
-<% if @mood.musics.any? %>
-  <% @user_moods.each do |user_mood| %>
-    <% if user_mood.mood_id == @mood.id && user_mood.user_id == current_user.id %>
-      <div class="music-info-card d-flex justify-content-between align-items-end mt-3 p-2">
-        <div class="text-info">
-          <h3 class="mb-1">"<%= user_mood.music.title %>"</h3>
-          <div class="artist-column">
-            <p class="label">Artist:</p>
-            <p><%= user_mood.music.artist %></p>
-          </div>
-          <div class="album-column">
-            <p class="label">Album:</p>
-            <p><%= user_mood.music.album %></p>
-          </div>
+<div class="music-list-wrapper d-flex flex-column align-items-center">
+  <% if @user_mood_musics.any? %>
+    <% @user_mood_musics.each do |user_mood_music| %>
+     <%= link_to  music_path(user_mood_music.music_id), class: "text-decoration-none" do %>
+        <div class="music-info-card p-3 mb-4">
+            <div class="music-text">
+              <h3 class="mb-2">"<%= user_mood_music.music.title %>"</h3>
+              <p><strong>Artist:</strong> <%= user_mood_music.music.artist %></p>
+              <p><strong>Album:</strong> <%= user_mood_music.music.album %></p>
+            </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
-<% else %>
-  <p class="text-center">No musics yet.</p>
-<% end %>
+   <% else %>
+    <p class="text-center">No musics yet.</p>
+   <% end %>
+</div>
 
 
-<div class="d-flex justify-content-center mt-3">
-  <%= link_to "Select  new mood", root_path, class: "generate-music-button btn btn-success" %>
+<div class="d-flex justify-content-center mt-4">
+  <%= link_to "Select  new mood", root_path, class: "btn btn-purple btn-lg" %>
 </div>
