@@ -10,9 +10,21 @@
 
 <div class="container">
   <%= simple_form_for [@mood, @message] do |f| %>
-    <%= f.button :submit, 'Look for a music', class: 'btn btn-primary' %>
+    <%= f.button :submit, 'Look for a music',
+      id: 'look-button',
+      class: 'btn btn-primary' %>
   <% end %>
 
-  <%= button_to "Like ? Add this song to your musics", mood_musics_path(@mood) %>
+  <%= button_to "Like ? Add this song to your musics",
+    mood_musics_path(@mood),
+    method: :post,
+    id: "like-button",
+    # lié au pseudo-code ligne 13 music_controller.rb
+    class: "btn btn-success mt-2 #{'d-none' if @hide_button}" %>
+
+
   <%= link_to "Enough ? Go to the mood to see musics", mood_path(@mood)  %>
 </div>
+
+<%= render "shared/flash" %>
+
