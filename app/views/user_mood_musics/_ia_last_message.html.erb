@@ -1,4 +1,4 @@
-  <% if  mood.id == message.mood_id %>
+  <% if  mood.id == message&.mood_id %>
       <% json_message = message.content %>
       <% message_hash = JSON.parse(json_message) %>
       <p> "<%= message_hash["title"] %>"</p>
