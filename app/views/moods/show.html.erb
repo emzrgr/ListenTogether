@@ -1,5 +1,5 @@
 <div class="mood-header mb-4">
-  <h1><%= @mood.emoji %> Your <%= @mood.name.capitalize %> mood </h1>
+  <h1><%= @mood.emoji %> <%= @mood.name.capitalize %></h1>
 </div>
 
 <% if @mood.user_moods.any? %>
@@ -26,5 +26,5 @@
 
 
 <div class="d-flex justify-content-center mt-3">
-  <%= link_to "Select  new mood", root_path, class: "generate-music-button btn btn-success" %>
+  <%= link_to "Select a mood", new_mood_music_path(@mood), class: "generate-music-button btn btn-success" %>
 </div>

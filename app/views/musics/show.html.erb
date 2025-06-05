@@ -1,4 +1,12 @@
 <div class="container mt-3">
+  <div class="navbar-user d-flex justify-content-between align-items-center">
+    <div class="app-name">
+      <h2><i class="fa-solid fa-music"></i> My musical moods</h1>
+    </div>
+    <div class="user-icon">
+      <button type="button"><%= current_user.email.first.capitalize %></button>
+    </div>
+  </div>
   <div class="body">
     <div class="music-info-card d-flex justify-content-between align-items-end mt-3 p-2">
       <div class="text-info">

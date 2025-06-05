@@ -36,8 +36,10 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_05_104617) do
     t.string "artist"
     t.text "lyrics"
     t.string "cover_url"
+    t.bigint "mood_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["mood_id"], name: "index_musics_on_mood_id"
   end
 
   create_table "user_mood_musics", force: :cascade do |t|

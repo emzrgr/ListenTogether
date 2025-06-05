@@ -1,9 +1,8 @@
 class MoodsController < ApplicationController
-
-  before_action :authenticate_user!
   def index
     @moods = Mood.all
   end
+
   def show
     @mood = Mood.find(params[:id])
     @user_mood = UserMood.find_by(user_id: current_user.id, mood_id: @mood.id)
