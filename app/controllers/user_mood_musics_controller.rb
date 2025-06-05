@@ -9,6 +9,7 @@ class UserMoodMusicsController < ApplicationController
   def new
     @user_mood_music = UserMoodMusic.new
     @message = Message.new
+    @hide_button = !!Music.find_by(title: JSON.parse(@last_message.content)["title"])
   end
 
   def create
@@ -18,7 +19,8 @@ class UserMoodMusicsController < ApplicationController
     @user_mood = UserMood.find_or_create_by(mood_id: @mood.id, user_id: current_user.id)
       if @music.valid? && @user_mood.valid?
         UserMoodMusic.find_or_create_by(user_mood_id: @user_mood.id, music_id: @music.id)
-        new_mood_user_mood_music_path(@mood)
+        flash[:success] = "You liked this song!"
+         redirect_to new_mood_user_mood_music_path(@mood)
       else
         render :new, status: :unprocessable_entity
       end
