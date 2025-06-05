@@ -6,6 +6,7 @@ class MusicsController < ApplicationController
     @music = Music.find(params[:id])
   end
 
+<<<<<<< HEAD
   def new
     @music = Music.new
     @message = Message.new
@@ -26,6 +27,8 @@ class MusicsController < ApplicationController
       end
   end
 
+=======
+>>>>>>> 9ae477bd030faee5b64e64f55cbdf139c55de015
   private
 
   def set_mood

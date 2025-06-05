@@ -22,9 +22,8 @@
     # lié au pseudo-code ligne 13 music_controller.rb
     class: "btn btn-success mt-2 #{'d-none' if @hide_button}" %>
 
+    <%= button_to "Like ? Add this song to your musics", mood_user_moods_path(@mood) %>
 
   <%= link_to "Enough ? Go to the mood to see musics", mood_path(@mood)  %>
 </div>
-
-<%= render "shared/flash" %>
 
