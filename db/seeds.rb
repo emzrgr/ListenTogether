@@ -18,32 +18,3 @@ Mood.create!([
   { name: "Love", emoji: "😍" },
   { name: "Cool", emoji: "😎" }
 ])
-
-Music.create!([
-  {
-    title: "Happy Song",
-    album: "Feel Good",
-    artist: "Joyful Band",
-    lyrics: "Singing in the sunshine...",
-    cover_url: "https://f4.bcbits.com/img/a2218107711_16.jpg",
-    mood_id: 1
-  },
-  {
-    title: "Blue Moon",
-    album: "Melancholy Nights",
-    artist: "Sad Singer",
-    lyrics: "Under the blue moon, I wander...",
-    cover_url: "https://f4.bcbits.com/img/a2218107711_16.jpg",
-    mood_id: 2
-  },
-  {
-    title: "Rage Anthem",
-    album: "Fire Inside",
-    artist: "Angry Voices",
-    lyrics: "Let it all out, scream and shout...",
-    cover_url: "https://f4.bcbits.com/img/a2218107711_16.jpg",
-    mood_id: 3
-  }
-])
-
-puts "Musics créées !  "

@@ -13,6 +13,6 @@
     <%= f.button :submit, 'Look for a music', class: 'btn btn-primary' %>
   <% end %>
 
-  <%= button_to "Like ? Add this song to your musics", mood_musics_path(@mood) %>
+  <%= button_to "Like ? Add this song to your musics", mood_user_moods_path(@mood) %>
   <%= link_to "Enough ? Go to the mood to see musics", mood_path(@mood)  %>
 </div>
