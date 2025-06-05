@@ -1,0 +1,44 @@
+.music-list-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.music-info-card {
+  width: 100%;
+  border: 2px solid #3C1A5B;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(60, 26, 91, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.music-info-card:hover {
+  transform: scale(1.02);
+}
+
+.music-text h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.music-text p {
+  margin-bottom: 5px;
+}
+
+.btn-purple {
+  background-color: #3C1A5B;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-purple:hover {
+  background-color: white;
+  color: #3C1A5B;
+  border: 2px solid #3C1A5B;
+}
