@@ -1,7 +1,7 @@
 class UserMoodMusicsController < ApplicationController
 
   before_action :set_last_message, only: [:create, :new]
-  before_action :set_mood, only: [:create, :new]
+  before_action :set_mood, only: [:create, :new, :destroy]
   def index
 
   end
@@ -25,7 +25,6 @@ class UserMoodMusicsController < ApplicationController
   end
 
   def destroy
-
   end
 
   private

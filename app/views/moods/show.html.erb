@@ -4,20 +4,21 @@
 
 <% if @mood.user_moods.any? %>
   <% @user_mood_musics.each do |user_mood_music| %>
-   <%# dans literation recup les usermoodmusics lié et iterer dessus pour chopper les musics. %>
+   <%= link_to  music_path(user_mood_music.music_id), class: "text-decoration-none" do %>
       <div class="music-info-card d-flex justify-content-between align-items-end mt-3 p-2">
-        <div class="text-info">
-          <h3 class="mb-1">"<%= user_mood_music.music.title %>"</h3>
-          <div class="artist-column">
-            <p class="label">Artist:</p>
-            <p><%= user_mood_music.music.artist %></p>
+          <div class="text-info">
+            <h3 class="mb-1">"<%= user_mood_music.music.title %>"</h3>
+            <div class="artist-column">
+              <p class="label">Artist:</p>
+              <p><%= user_mood_music.music.artist %></p>
+            </div>
+            <div class="album-column">
+              <p class="label">Album:</p>
+              <p><%= user_mood_music.music.album %></p>
+            </div>
           </div>
-          <div class="album-column">
-            <p class="label">Album:</p>
-            <p><%= user_mood_music.music.album %></p>
-          </div>
-        </div>
       </div>
+      <% end %>
   <% end %>
 <% else %>
   <p class="text-center">No musics yet.</p>
