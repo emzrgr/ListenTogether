@@ -8,7 +8,7 @@
   <div data-mood-dropdown-target="dropdown" class="mood-dropdown hidden">
     <h2>Select a Mood</h2>
     <% @moods.each do |mood| %>
-      <%= link_to  new_mood_user_mood_path(mood), class: "mood-item" do %>
+      <%= link_to   new_mood_user_mood_music_path(mood), class: "mood-item" do %>
         <span class="emoji"><%= mood.emoji %></span>
         <span class="mood-name"><%= mood.name %></span>
       <% end %>
