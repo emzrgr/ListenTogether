@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
 
- SYSTEM_PROMPT =
-  "Tu es un assistant musical. Lorsqu’un utilisateur sélectionne un “mood” (ex. : joyeux, triste, nostalgique, motivé, amoureux…), tu dois recommander une chanson qui correspond émotionnellement à ce mood.\
+ SYSTEM_PROMPT = "Tu es un assistant musical. Lorsqu’un utilisateur sélectionne un “mood” (ex. : joyeux, triste, nostalgique, motivé, amoureux…), tu dois recommander une chanson qui correspond émotionnellement à ce mood.\
                       Ta réponse doit être au format JSON, comme dans l’exemple suivant :
                     {
                       \"artist\": \"Nom de l\'artiste\",
@@ -13,13 +12,12 @@ class MessagesController < ApplicationController
                     Contraintes obligatoires :\
                     -N'écris pas de petit texte explicatif.\
                     -N’invente pas d’URL de pochette si tu n’en trouves pas : dans ce cas, laisse le champ \"cover\" vide ou mets une chaîne vide : "".
-                    -Si tu n’as pas de mémoire, considère chaque requête comme unique et fais varier au maximum les styles, artistes, langues et époques.\
                     -Privilégie les suggestions originales, variées, mais cohérentes émotionnellement.\
-                    -Tu es créatif, pertinent, et tu adaptes tes réponses à l’émotion humaine derrière chaque mood."
-
+                    -Tu es créatif, pertinent, et tu adaptes tes réponses à l’émotion humaine derrière chaque mood.
+                    -Ne me renvoie jamais une musique dans la liste que je t'envoie. Ne propose jamais la musique 'Happy' de Pharell WIliams"
   def generate_music
     @mood = Mood.find(params[:mood_id])
-    @message = Message.new(role: "user", content: @mood.name, mood_id: @mood.id, task: "music_generator" )
+    @message = Message.new(role: "user", content: @mood.name, mood_id: @mood.id )
     @all_musics = Message.where(task: "music_generator")
 
     if @message.save
@@ -27,7 +25,7 @@ class MessagesController < ApplicationController
       @llm_chat = @chat.with_instructions(SYSTEM_PROMPT)
 
       @all_musics.each do |music|
-        @llm_chat.add_message(music)
+         @llm_chat.add_message(role: music.role, content: music.content)
       end
 
       response = @llm_chat.ask(@message.content)
@@ -51,7 +49,7 @@ class MessagesController < ApplicationController
       @llm_chat = chat.with_instructions("Tu es un assistant musical, nous allons parler de #{music_title} de #{music_artist}")
 
       @chat.messages.each do |message|
-        @llm_chat.add_message(message)
+        @llm_chat.add_message(role: message.role, content: message.content)
       end
 
       response = @llm_chat.ask(@message.content)
