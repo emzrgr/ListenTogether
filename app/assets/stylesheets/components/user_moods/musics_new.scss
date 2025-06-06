@@ -23,37 +23,57 @@
   border-color: $purple;
 }
 
+.buttons {
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
 .add-button {
+  margin: 0px;
   font-size: 12px;
   width: auto;
-  padding: 3px;
-  border-radius: 10px !important;
-  background-color: white !important;
-  color: $purple !important;
-  border: solid 2px $purple !important;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: white;
+  color: $purple;
+  border: solid 2px $purple;
+  transition: transform 0.2s ease;
+}
+
+.add-button:hover {
+  box-shadow: 0 8px 20px rgba(60, 26, 91, 0.3);
 }
 
 .ai-button {
   font-size: 12px !important;
   width: auto !important;
-  padding: 3px;
+  padding: 6px !important;
   border-radius: 10px !important;
   border: solid 2px $purple !important;
   background-color: $purple !important;
   color: white !important;
-  padding: 10px !important;
   margin-top: 0px !important;
   margin-bottom: 0px !important;
+  transition: transform 0.2s ease !important;
 }
 
-.ai-button input:hover {
+.ai-button:hover {
   font-size: 12px !important;
   width: auto !important;
-  padding: 3px !important;
+  padding: 6px !important;
   border-radius: 10px !important;
   border: solid 2px $purple !important;
   background-color: $purple !important;
   color: white !important;
   margin-top: 0px !important;
   margin-bottom: 0px !important;
+  box-shadow: 0 8px 20px rgba(60, 26, 91, 0.3) !important;
+}
+
+.done-button {
+  width: auto;
+}
+
+.done-col {
+  margin-bottom: 20px;
 }
