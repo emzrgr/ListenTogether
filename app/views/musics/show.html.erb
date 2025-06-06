@@ -1,26 +1,31 @@
-  <div class="body">
-    <div class="music-info-card d-flex justify-content-between align-items-end mt-3 p-2">
-      <div class="text-info">
-        <h3 class="mb-1">"<%=  @music.title %>"</h2>
-        <div class="artist-column">
-          <p class="label"> Artist:</p>
-          <p><%= @music.artist %></p>
+<div class="container my-4">
+  <div class="card shadow-sm" style="max-width: 500px;">
+    <div class="row g-0 align-items-center">
+      <div class="col-8">
+        <div class="card-body py-3">
+          <h5 class="card-title mb-2" style="word-break: break-word;">
+            <%= @music.title %>
+          </h5>
+          <p class="mb-1"><span class="fw-bold">Artist:</span> <%= @music.artist %></p>
+          <p class="mb-0"><span class="fw-bold">Album:</span> <%= @music.album %></p>
         </div>
-        <div class="album-column">
-          <p class="label"> Album:</p>
-          <p><%= @music.album %></p>
-        </div>
-        </div>
-        <div class="photo-card">
-          <% unless @music.cover_url == nil %>
-            <%= image_tag @music.cover_url, alt: @music.title %>
-          <% end %>
-        </div>
+      </div>
+      <div class="col-4 text-end">
+        <% unless @music.cover_url.nil? %>
+          <%= image_tag @music.cover_url, alt: @music.title, class: "img-fluid rounded-end", style: "max-height: 90px;" %>
+        <% end %>
+      </div>
     </div>
+  </div>
+</div>
+
     <div class="llm-card">
       <h3>Want more info? <br>
-          Ask LT:</h3>
-         <%= button_to "Talk about this song", user_mood_music_chats_path(@user_mood_music), method: :post %>
+          Ask Maria:</h3>
+
+    </div>
+    <div class="llm-button">
+      <%= button_to "Talk about this song", user_mood_music_chats_path(@user_mood_music), method: :post, class:"btn btn-purple btn-lg w-100 mt-3" %>
     </div>
   </div>
 </div>
