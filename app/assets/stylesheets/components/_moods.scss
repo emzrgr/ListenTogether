@@ -1,13 +1,12 @@
-
-.mood-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.main-title h1 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 17px;
 }
 
-h1 {
-  text-align: center;
-  margin-top: 30px;
+.intro-text p{
+  padding: 0px 10px;
+  font-size: 13px;
 }
 
 .mood-dropdown-container {
@@ -23,19 +22,42 @@ h1 {
 .mood-toggle-button {
   background-color: #3C1A5B;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 10px;
   font-size: 16px;
   border-radius: 10px;
-  border: none;
+  border: solid 2px transparent !important;;
   cursor: pointer;
-  margin-top: 20px;
+  margin-bottom: 0px;
   font-weight: bold;
+  width: 80%;
+  margin-top: 5px;
+}
+
+.mood-toggle-button:hover {
+  background-color: white;
+  color: $purple;
+  padding: 10px 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: solid 2px $purple !important;
+  cursor: pointer;
+  margin-bottom: 0px;
+  font-weight: bold;
+  width: 80%;
+}
+
+.mood-dropdown-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .mood-dropdown {
-  margin-top: 5px;
+  width: 70%;
+  margin-top: 0px;
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: 6px;
   border-radius: 6px;
   background-color: white;
   font-family: $body-font;
@@ -44,15 +66,17 @@ h1 {
 .mood-item {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
   border-bottom: 1px solid #bbb;
   text-decoration: none;
   color: inherit;
   font-family: $body-font;
+  margin-top: 0px;
 }
 
 .mood-item:last-child {
   border-bottom: none;
+  padding-bottom: 0px;
 }
 
 .mood-dropdown a {
@@ -62,13 +86,14 @@ h1 {
 }
 
 .mood-name {
+  font-size: 14px;
   color: black;
   font-family: $body-font;
 }
 
 .emoji {
   margin-right: 10px;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .hidden {
