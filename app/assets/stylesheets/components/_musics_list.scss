@@ -3,15 +3,14 @@
   margin: 0 auto;
   padding: 0 1rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 7px;
 }
 
 .music-info-card {
   width: 100%;
   max-width: 500px;
-  height: 160px;
+  height: 110px !important;
   border: 2px solid #3C1A5B;
   border-radius: 10px;
   background-color: #ffffff;
@@ -61,7 +60,7 @@
 }
 
 .music-text h3 {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 5px;
@@ -71,7 +70,7 @@
 }
 
 .music-text p {
-  font-size: 16px;
+  font-size: 13px;
   margin-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
@@ -93,6 +92,14 @@
   background-color: white;
   color: #3C1A5B;
   border: 2px solid #3C1A5B;
+}
+
+.btn-suppr {
+  border: none;
+}
+
+.btn-suppr:hover {
+  background-color: transparent;
 }
 
 @media (max-width: 576px) {

@@ -6,6 +6,6 @@ module UserMoodMusicsHelper
         turbo_method: :delete,
         turbo_confirm: "Are you sure you want to remove this song from your mood?"
       },
-      class: "btn btn-outline-danger btn-sm"
+      class: "btn btn-suppr btn-outline-danger btn-sm"
   end
 end
