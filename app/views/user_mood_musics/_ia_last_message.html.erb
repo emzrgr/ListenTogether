@@ -1,7 +1,11 @@
   <% if  mood.id == message&.mood_id %>
       <% json_message = message.content %>
       <% message_hash = JSON.parse(json_message) %>
-      <p> "<%= message_hash["title"] %>"</p>
-      <p>by <%= message_hash["artist"] %>, album: <%= message_hash["album"] %></p>
+      <p class="mb-2">Here's a song you might like:</p>
+      <div class="ai-proposition-card">
+        <p> "<%= message_hash["title"] %>"</p>
+        <p>by <%= message_hash["artist"] %>,</p>
+        <p>Album: <%= message_hash["album"] %></p>
+      </div>
       <img src="<%= message_hash["cover"] %>" alt="Cover de <%= message_hash["album"] %>">
   <% end %>
