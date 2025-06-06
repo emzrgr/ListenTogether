@@ -5,15 +5,15 @@
 <div class="music-list-wrapper">
   <% if @user_mood_musics.any? %>
     <% @user_mood_musics.each do |user_mood_music| %>
-        <div class="music-info-card">
-          <%= link_to  user_mood_music_path(@user_mood, user_mood_music.music.id), class: "text-decoration-none" do %>
-            <div class="music-text">
-            <h3 class="mb-2">"<%= user_mood_music.music.title %>"</h3>
+      <div class="music-info-card">
+        <%= link_to  user_mood_music_path(@user_mood, user_mood_music.music.id), class: "text-decoration-none" do %>
+          <div class="music-text">
+            <h3>"<%= user_mood_music.music.title %>"</h3>
             <p><strong>Artist:</strong> <%= user_mood_music.music.artist %></p>
             <p><strong>Album:</strong> <%= user_mood_music.music.album %></p>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
       <%= remove_music_button(@mood, user_mood_music.music) %>
     <% end %>
    <% else %>

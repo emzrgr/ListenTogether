@@ -1,25 +1,25 @@
-
-<%= link_to "← Back", user_mood_music_path(@chat.user_mood_music.user_mood, @chat.user_mood_music.music) %> /
-
-<h1><%= @chat.user_mood_music.music.title %></h1>
+<div class="chat-container">
+  <%= link_to "← Back", user_mood_music_path(@chat.user_mood_music.user_mood, @chat.user_mood_music.music) %> /
+  <h1><%= @chat.user_mood_music.music.title %></h1>
 
   <% @chat.messages.each do |message| %>
-  <% if message.role == "user" %>
-    <div class="d-flex justify-content-end mb-2">
-      <div class="bg-white px-3 pb-0 pt-3 rounded-pill">
-        <%= raw(render_markdown(message.content)) %>
+    <% if message.role == "user" %>
+      <div class="d-flex justify-content-end mb-2">
+        <div class="chat-bubble user">
+          <%= raw(render_markdown(message.content)) %>
+        </div>
       </div>
-    </div>
-  <% elsif message.role == "assistant" %>
-    <div class="d-flex justify-content-start mb-5">
-      <div class="px-3 pb-0 pt-3">
-        <%= raw(render_markdown(message.content)) %>
+    <% elsif message.role == "assistant" %>
+      <div class="d-flex justify-content-start mb-5">
+        <div class="chat-bubble assistant">
+          <%= raw(render_markdown(message.content)) %>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
 
-<%= simple_form_for [@chat, @message] do |f| %>
-  <%= f.input :content, placeholder: "Ask a question", required: true, label: false %>
-  <%= f.button :submit, 'Ask LLM', class: 'btn btn-primary' %>
-<% end %>
+  <%= simple_form_for [@chat, @message], html: { class: "chat-form"} do |f| %>
+    <%= f.input :content, placeholder: "Ask a question", required: true, label: false %>
+    <%= f.button :submit, 'Ask LLM', class: 'btn btn-purple btn-lg w-100 mt-3' %>
+  <% end %>
+</div>
