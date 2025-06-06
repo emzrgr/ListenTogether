@@ -15,9 +15,12 @@
   <div class="container">
     <div class="buttons d-flex justify-content-between flex-wrap align-items-center">
       <%= button_to "Add to moodlist ❤️", mood_user_mood_musics_path(@mood), class: 'add-button' %>
-      <%= simple_form_for [@mood, @message] do |f| %>
+
+      <%= simple_form_for @message, url: mood_generate_music_message_path(@mood), method: :post do |f| %>
         <%= f.button :submit, 'Find the perfect song✨', class: "ai-button" %>
       <% end %>
+
+
       <%= link_to "Done? Check your moodlist", mood_path(@mood)  %>
     </div>
   </div>
