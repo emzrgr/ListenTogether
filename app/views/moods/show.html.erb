@@ -9,11 +9,10 @@
      <%= link_to  user_mood_music_path(@user_mood, user_mood_music.music.id), class: "text-decoration-none" do %>
         <div class="music-info-card">
             <div class="music-text">
-              h3 class="mb-2">"<%= user_mood_music.music.title %>"</h3>
+            <h3 class="mb-2">"<%= user_mood_music.music.title %>"</h3>
             <p><strong>Artist:</strong> <%= user_mood_music.music.artist %></p>
             <p><strong>Album:</strong> <%= user_mood_music.music.album %></p>
           </div>
-        <% end %>
       </div>
       <% end %>
       <%= remove_music_button(@mood, user_mood_music.music) %>
