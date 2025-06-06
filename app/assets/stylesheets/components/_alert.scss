@@ -4,3 +4,14 @@
   right: 16px;
   z-index: 1000;
 }
+
+.btn-close {
+  width: 0.5em !important;
+  height: 0.5em!important;
+  padding: 0.25em!important;
+  background-size: 0.5em!important;
+  opacity: 0.6!important;
+}
+.btn-close:hover {
+  opacity: 1!important;
+}
