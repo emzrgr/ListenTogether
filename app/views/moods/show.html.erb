@@ -5,7 +5,7 @@
 <div class="music-list-wrapper d-flex flex-column align-items-center">
   <% if @user_mood_musics.any? %>
     <% @user_mood_musics.each do |user_mood_music| %>
-     <%= link_to  music_path(user_mood_music.music_id), class: "text-decoration-none" do %>
+     <%= link_to  user_mood_music_path(@user_mood, user_mood_music.music.id), class: "text-decoration-none" do %>
         <div class="music-info-card p-3 mb-4">
             <div class="music-text">
               <h3 class="mb-2">"<%= user_mood_music.music.title %>"</h3>

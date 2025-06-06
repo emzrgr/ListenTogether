@@ -1,6 +1,6 @@
 class UserMoodMusicsController < ApplicationController
 
-  before_action :set_last_message, only: [:create, :new]
+  before_action :set_last_music_message, only: [:create, :new]
   before_action :set_mood, only: [:create, :new, :destroy]
 
   def index
@@ -51,7 +51,7 @@ class UserMoodMusicsController < ApplicationController
     @mood = Mood.find(params[:mood_id])
   end
 
-  def set_last_message
-    @last_message = Message&.last
+  def set_last_music_message
+    @last_message = Message&.where(task: "music_generator").last
   end
 end

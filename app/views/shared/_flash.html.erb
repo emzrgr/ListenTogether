@@ -1,12 +1,15 @@
 <% if flash[:success] %>
-  <div class="alert alert-success alert-dismissible fade show mt-4 px-4 py-3 fs-5 fw-semibold shadow-lg border border-success border-2 rounded" role="alert">
+  <div class="alert alert-primary alert-dismissible fade show mt-3 py-2 px-3 small border-0 shadow-sm" role="alert" style="background-color: #ede7f6; color: #5e35b1;">
+    <i class="bi bi-check-circle me-2"></i>
     <%= flash[:success] %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <% end %>
 
+
 <% if flash[:error] %>
-  <div class="alert alert-success alert-dismissible fade show mt-4 px-4 py-3 fs-5 fw-semibold shadow-lg border border-success border-2 rounded" role="alert">
+  <div class="alert alert-primary alert-dismissible fade show mt-3 py-2 px-3 small border-0 shadow-sm" role="alert" style="background-color: #f3e8ff; color: #a21caf;">
+    <i class="bi bi-exclamation-triangle me-2"></i>
     <%= flash[:error] %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>

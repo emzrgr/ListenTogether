@@ -11,11 +11,12 @@
       </div>
     </div>
   </div>
+
   <div class="row buttons">
       <div class="col-6">
-        <%= simple_form_for [@mood, @message] do |f| %>
-          <%= f.button :submit, 'Find the perfect song✨', class: "ai-button" %>
-        <% end %>
+          <%= simple_form_for @message, url: mood_generate_music_message_path(@mood), method: :post do |f| %>
+        <%= f.button :submit, 'Find the perfect song✨', class: "ai-button" %>
+      <% end %>
       </div>
       <div class="col-6">
         <%= button_to "Add to moodlist ❤️", mood_user_mood_musics_path(@mood), class: 'add-button' %>
