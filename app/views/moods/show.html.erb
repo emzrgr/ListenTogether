@@ -2,25 +2,27 @@
   <h1><%= @mood.emoji %> Your <%= @mood.name.capitalize %> mood </h1>
 </div>
 
-<div class="music-list-wrapper d-flex flex-column align-items-center">
+<div class="music-list-wrapper">
   <% if @user_mood_musics.any? %>
     <% @user_mood_musics.each do |user_mood_music| %>
+
      <%= link_to  user_mood_music_path(@user_mood, user_mood_music.music.id), class: "text-decoration-none" do %>
-        <div class="music-info-card p-3 mb-4">
+        <div class="music-info-card">
             <div class="music-text">
-              <h3 class="mb-2">"<%= user_mood_music.music.title %>"</h3>
-              <p><strong>Artist:</strong> <%= user_mood_music.music.artist %></p>
-              <p><strong>Album:</strong> <%= user_mood_music.music.album %></p>
-            </div>
-        </div>
+              h3 class="mb-2">"<%= user_mood_music.music.title %>"</h3>
+            <p><strong>Artist:</strong> <%= user_mood_music.music.artist %></p>
+            <p><strong>Album:</strong> <%= user_mood_music.music.album %></p>
+          </div>
+        <% end %>
+      </div>
       <% end %>
       <%= remove_music_button(@mood, user_mood_music.music) %>
+
     <% end %>
    <% else %>
     <p class="text-center">No musics yet.</p>
    <% end %>
 </div>
-
 
 <div class="d-flex justify-content-center mt-4">
   <%= link_to "Select  new mood", root_path, class: "btn btn-purple btn-lg" %>
