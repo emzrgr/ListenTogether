@@ -1,9 +1,12 @@
   <div class="navbar-user d-flex justify-content-between align-items-center">
     <div class="app-name">
-      <h2>🎵 My musical moods</h1>
+      <h2>
+        <%= link_to "🎵", root_path, class: "music-emoji-link", style: "text-decoration: none;" %>
+        My musical moods
+      </h2>
     </div>
     <div class="logout">
-      <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete } %>
+      <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %>
     </div>
     <div class="user-icon">
       <button type="button"><%= current_user.email.first.capitalize %>
