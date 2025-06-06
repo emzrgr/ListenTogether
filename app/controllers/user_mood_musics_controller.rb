@@ -42,7 +42,7 @@ class UserMoodMusicsController < ApplicationController
       flash[:alert] = "Music not found for this mood."
     end
 
-    redirect_to new_mood_user_mood_music_path(@mood)
+    redirect_back fallback_location: new_mood_user_mood_music_path(@mood)
   end
 
   private
