@@ -94,6 +94,14 @@
   border: 2px solid #3C1A5B;
 }
 
+.btn-suppr {
+  border: none;
+}
+
+.btn-suppr:hover {
+  background-color: transparent;
+}
+
 @media (max-width: 576px) {
   .music-info-card {
     height: 130px;
