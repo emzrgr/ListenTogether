@@ -1,27 +1,30 @@
-<div class="main-container px-2">
-  <div class="container">
-    <div class="music-search-title">
+<div class="container px-2 mx-2">
+  <div class="row">
+    <div class="col music-search-title">
       <h1>Your mood: <%= @mood.name.downcase %> <%= @mood.emoji %></p>
     </div>
   </div>
-  <div class="container mb-2">
-    <div class="ai-response-card d-flex flex-column align-items-start">
-      <p class="mb-2">Here's a song you might like:</p>
-      <div class="ai-proposition-card">
+  <div class="row mb-2">
+    <div class="col ai-response-card">
+      <div>
         <%= render "ia_last_message", message: @last_message, mood: @mood %>
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="buttons d-flex justify-content-between flex-wrap align-items-center">
-      <%= button_to "Add to moodlist ❤️", mood_user_mood_musics_path(@mood), class: 'add-button' %>
 
-      <%= simple_form_for @message, url: mood_generate_music_message_path(@mood), method: :post do |f| %>
+  <div class="row buttons">
+      <div class="col-6">
+          <%= simple_form_for @message, url: mood_generate_music_message_path(@mood), method: :post do |f| %>
         <%= f.button :submit, 'Find the perfect song✨', class: "ai-button" %>
       <% end %>
-
-
-      <%= link_to "Done? Check your moodlist", mood_path(@mood)  %>
+      </div>
+      <div class="col-6">
+        <%= button_to "Add to moodlist ❤️", mood_user_mood_musics_path(@mood), class: 'add-button' %>
+      </div>
+    </div>
+  <div class="row stop-button">
+    <div class="col-sm-12 done-col text-center fixed-bottom">
+      <%= link_to "Done? Check your moodlist ➡️", mood_path(@mood), class: 'done-button'  %>
     </div>
   </div>
 </div>
